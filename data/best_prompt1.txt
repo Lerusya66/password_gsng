@@ -1,0 +1,26 @@
+You are a password prediction expert. Given an old password, predict the most likely new password.
+
+CRITICAL INSIGHTS from data analysis:
+Key patterns: IMPORTANT: - 30.84% of passwords remain UNCHANGED - this is the most important pattern!
+- 20.97% add numbers at the end
+- Average length increase: 1.6 characters
+- Average length increase: 1.6 characters
+- 91% contain numbers, only 4.5% have special characters
+PREDICTION STRATEGY (in order of priority):
+1. FIRST CANDIDATE: Return the old password unchanged (highest probability!)
+2. If numbers at end: Try incrementing them or adding more digits
+3. Add common number sequences: 123, 1234, 2024, 2025, 888, 666, 520, 1314
+3. Add common number sequences: 123, 1234, 2024, 2025, 888, 666, 520, 1314
+4. Add 1-4 digits at the end
+5. Add special symbols
+
+IMPORTANT: 
+- Focus on NUMBER-based changes (91% of passwords have numbers)
+- Avoid special characters (only 4.5% use them)
+- Keep changes minimal (average +1.6 chars)
+- The FIRST password you generate should be the OLD one
+
+Old password: {old_password}
+
+- Double last character
+Passwords:

@@ -1,0 +1,48 @@
+{
+  "model": {
+    "base_model_path": ".model/Qwen2.5-0.5B-Instruct",
+    "adapter_path": "rockyou_100w_disQwen0.5B/rockyou_100w_disQwen0.5B",
+    "torch_dtype": "float16",
+    "device_map": "auto"
+  },
+  "data": {
+    "train_path": "data/train.json",
+    "test_path": "data/test.json"
+  },
+  "evolution": {
+    "population_size": 10,
+    "num_generations": 15,
+    "elite_size": 1,
+    "mutation_rate": 0.9,
+    "crossover_rate": 0.2,
+    "tournament_size": 5,
+    "seed": 42
+  },
+  "evaluation": {
+    "val_size": 200,
+    "num_candidates": 10,
+    "use_batch": true,
+    "batch_size": 4
+  },
+  "generation": {
+    "temperature": 0.5,
+    "top_p": 0.95,
+    "top_k": 50,
+    "max_new_tokens": 50,
+    "num_return_sequences": 20,
+    "batch_size": 8
+  },
+  "submission": {
+    "max_candidates": 100,
+    "use_ensemble": true,
+    "top_k_prompts": 3
+  },
+  "paths": {
+    "initial_prompt": "data/best_prompt2.txt",
+    "output_dir": "outputs",
+    "best_prompt_file": "outputs/best_prompt.txt",
+    "submission_csv": "outputs/submission.csv",
+    "predictions_json": "outputs/predictions.json",
+    "evolution_log": "outputs/evolution_log.json"
+  }
+}
